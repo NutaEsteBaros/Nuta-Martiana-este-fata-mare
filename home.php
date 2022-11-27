@@ -158,11 +158,12 @@ if(isset($_SESSION['user_id'])){
 		</div>		
 	</div>
     
-  
+  <div class="heading"><h1>Teachers:</h1>
    <div class="card-holder">
 <div class="card">
   <div class="card-contents">
   <section class="card__read-more">
+   
 	<?php
    $idsc=$fetch_products['id'];
      $select_teach = $conn->prepare("SELECT * FROM `prof` WHERE id_school LIKE '%{$idsc}%'");
@@ -244,7 +245,7 @@ cardHolder
             return;
         const currentText = e.target.parentNode.querySelector('.card__read-more');
         currentText.classList.toggle('card__read-more--open');
-        current.textContent = current.textContent.includes('Show Teachers') ? 'Stop Show'' : 'Show Teachers';
+        current.textContent = current.textContent.includes('Read More') ? 'Show1' : 'Show';
     });
 </script>
 
