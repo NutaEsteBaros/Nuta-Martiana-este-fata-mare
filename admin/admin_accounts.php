@@ -42,13 +42,13 @@ if(isset($_GET['delete'])){
 
 <section class="accounts">
 
-   <h1 class="heading">Adminii</h1>
+   <h1 class="heading">Admins</h1>
 
    <div class="box-container">
 
    <div class="box">
-      <p>Inregistreaza nou admin</p>
-      <a href="register_admin.php" class="option-btn">Inregistreaza</a>
+      <p>Register new admin</p>
+      <a href="register_admin.php" class="option-btn">Register</a>
    </div>
 
    <?php
@@ -58,10 +58,10 @@ if(isset($_GET['delete'])){
          while($fetch_accounts = $select_account->fetch(PDO::FETCH_ASSOC)){  
    ?>
    <div class="box">
-      <p> Numar admin: <span><?= $fetch_accounts['id']; ?></span> </p>
-      <p> Nume admin : <span><?= $fetch_accounts['name']; ?></span> </p>
+      <p> Admin Number: <span><?= $fetch_accounts['id']; ?></span> </p>
+      <p> Admin Name : <span><?= $fetch_accounts['name']; ?></span> </p>
       <div class="flex-btn">
-         <a href="admin_accounts.php?delete=<?= $fetch_accounts['id']; ?>" class="delete-btn" onclick="return confirm('delete this account?');">sterge</a>
+         <a href="admin_accounts.php?delete=<?= $fetch_accounts['id']; ?>" class="delete-btn" onclick="return confirm('delete this account?');">delete</a>
          <?php
             if($fetch_accounts['id'] == $admin_id){
                echo '<a href="update_profile.php" class="option-btn">actualizeaza</a>';
@@ -72,7 +72,7 @@ if(isset($_GET['delete'])){
    <?php
       }
    }else{
-      echo '<p class="empty">nu exista conturi</p>';
+      echo '<p class="empty">No account existent</p>';
    }
    ?>
 

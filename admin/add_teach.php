@@ -38,17 +38,17 @@ if(isset($_POST['add_product'])){
    $select_products->execute([$name]);
 
    if($select_products->rowCount() > 0){
-      $message[] = 'numele produsului exista deja!';
+      $message[] = 'Username already exists!';
    }else{
       if($image_size > 2000000){
-         $message[] = 'imaginea este prea mare';
+         $message[] = 'Image is too big!';
       }else{
          move_uploaded_file($image_tmp_name, $image_folder);
 
          $insert_product = $conn->prepare("INSERT INTO `prof`(name, image,id_school,prenume,mat) VALUES(?,?,?,?,?)");
          $insert_product->execute([$name, $image,$pid,$prename,$mat]);
 
-         $message[] = 'noul profesor a fost adaugat!';
+         $message[] = 'New teacher has been added!';
       }
 
    }
@@ -145,13 +145,13 @@ header('location:add_teach.php');
       <div class="name"><?= $fetch_products['prenume']; ?></div>
       <div class="flex-btn">
        
-         <a href="add_teach.php?delete=<?= $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('stergi acest profesor?');">sterge</a>
+         <a href="add_teach.php?delete=<?= $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('Do you want to delete this teacher?');">Delete</a>
       </div>
    </div>
    <?php
          }
       }else{
-         echo '<p class="empty">nici un produs nu a fost agaugat inca!</p>';
+         echo '<p class="empty">No School has been added yet!</p>';
       }
    ?>
 

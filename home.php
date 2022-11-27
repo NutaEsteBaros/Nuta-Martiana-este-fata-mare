@@ -152,7 +152,7 @@ if(isset($_SESSION['user_id'])){
 
       <img src="uploaded_img/<?= $fetch_products['image']; ?>" alt="" class="schoolph">
       
-		<div class="heading"><h1>oras:<?= $fetch_products['oras'];?><br > Rating:<?php printf('%.1f', $average); ?> <small>/ 5</small></span> <span class="rating-reviews">
+		<div class="heading"><h1>County:<?= $fetch_products['oras'];?><br > Rating:<?php printf('%.1f', $average); ?> <small>/ 5</small></span> <span class="rating-reviews">
          <br><a href="show_rating.php?item_id=<?php echo $fetch_products["id"]; ?>"><button type="button"  class="btn btn-info">Rate this school</button></a></h1></div>
 				
 		</div>		
@@ -181,7 +181,7 @@ if(isset($_SESSION['user_id'])){
 	 
 
 <div class="heading"><h4><div class="title"><?= $fetch_teach['name']; ?></div><br>
-      <img src="uploaded_img/<?= $fetch_teach['image']; ?>" class="profpic" alt=""><br>Materie predata:<?= $fetch_teach['mat'];?><br > Rating:<?php printf('%.1f', $average); ?> <small>/ 5</small></span> <span class="rating-reviews">
+      <img src="uploaded_img/<?= $fetch_teach['image']; ?>" class="profpic" alt=""><br>Subjects:<?= $fetch_teach['mat'];?><br > Rating:<?php printf('%.1f', $average); ?> <small>/ 5</small></span> <span class="rating-reviews">
          <br><a href="show_rating.php?item_id=<?php echo $fetch_teach["id"]; ?>"><button type="button"  class="btn btn-info">Rate this theach</button></a></h1></div>
 
 

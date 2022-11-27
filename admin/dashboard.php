@@ -40,9 +40,9 @@ if(!isset($admin_id)){
    <div class="box-container">
 
    <div class="box">
-      <h3>Buna!</h3>
+      <h3>Hello!</h3>
       <p><?= $fetch_profile['name']; ?></p>
-      <a href="update_profile.php" class="btn">Editeaza profil</a>
+      <a href="update_profile.php" class="btn">Edit profile</a>
    </div>
 
    
@@ -54,7 +54,7 @@ if(!isset($admin_id)){
          $numbers_of_products = $select_products->rowCount();
       ?>
       <h3><?= $numbers_of_products; ?></h3>
-      <p>scoli</p>
+      <p>Schools</p>
       <a href="products.php" class="btn">vezi scoli</a>
    </div>
 
